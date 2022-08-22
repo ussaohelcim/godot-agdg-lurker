@@ -11,6 +11,7 @@ func _enter_tree():
 	agdg_lurker.get_node("%bottom").connect("button_down",self,"goBottom")
 	agdg_lurker.get_node("HTTPRequestCatalog").connect("request_completed",self,"onRequestCatalogCompleted")
 	agdg_lurker.get_node("HTTPRequestThread").connect("request_completed",self,"onRequestThreadCompleted")
+	refresh()
 
 func _exit_tree():
 	remove_control_from_docks(agdg_lurker)
@@ -66,9 +67,16 @@ func onRequestThreadCompleted(_result,_resCode,_headers,body):
 		if "filename" in p:
 			filename = str(p.tim) +"s"
 			filename += ".jpg"
+			var file = "https://i.4cdn.org/vg/" + filename
+			var http = HTTPRequest.new()
+			agdg_lurker.add_child(http)
+
+			http.connect("request_completed",post,"drawImageJPG")
+			http.request(file)
 		
 		post.setPost(p.name,p.now, str(p.no) , msg,filename)
 		posts_container.add_child(post)
+
 
 	var output = agdg_lurker.get_node("%output") as Label
 	output.text = json.result.posts[0].sub
