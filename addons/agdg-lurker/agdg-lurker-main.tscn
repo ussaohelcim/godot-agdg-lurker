@@ -1,0 +1,54 @@
+[gd_scene format=2]
+
+[node name="agdg-lurker" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HTTPRequestCatalog" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestThread" type="HTTPRequest" parent="."]
+
+[node name="agdg-lurker-header" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 20.0
+
+[node name="output" type="Label" parent="agdg-lurker-header"]
+unique_name_in_owner = true
+margin_top = 3.0
+margin_right = 70.0
+margin_bottom = 17.0
+text = "agdg lurker"
+
+[node name="refresh" type="Button" parent="agdg-lurker-header"]
+unique_name_in_owner = true
+margin_left = 74.0
+margin_right = 131.0
+margin_bottom = 20.0
+text = "refresh"
+
+[node name="top" type="Button" parent="agdg-lurker-header"]
+unique_name_in_owner = true
+margin_left = 135.0
+margin_right = 168.0
+margin_bottom = 20.0
+text = "top"
+
+[node name="bottom" type="Button" parent="agdg-lurker-header"]
+unique_name_in_owner = true
+margin_left = 172.0
+margin_right = 231.0
+margin_bottom = 20.0
+text = "bottom"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="posts-container" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+margin_right = 1024.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
