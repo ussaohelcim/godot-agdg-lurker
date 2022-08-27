@@ -38,7 +38,7 @@ func onRequestCatalogCompleted(_result,_resCode,_headers,body):
 	print("agdg-lurker requested catalog")
 	for page in json.result:
 		for thread in page.threads:
-			if "/agdg/" in thread.sub:
+			if "/agdg/" in thread.sub or "/AGDG/" in thread.sub:
 				fullLink = linkTemplate[0] + str(thread.no) + linkTemplate[1]
 				break
 
