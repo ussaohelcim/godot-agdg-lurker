@@ -7,4 +7,4 @@ Just add the addons folder to your project and enable the plugin at `Project > P
 
 ## Usage
 
-https://user-images.githubusercontent.com/57050328/186020200-c6d644f3-d273-4acc-afaf-c332d93ca04b.mp4
+https://user-images.githubusercontent.com/57050328/186028199-04b5a5a1-0e66-4e70-9b16-bee431271347.mp4
